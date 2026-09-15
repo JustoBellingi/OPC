@@ -113,26 +113,58 @@
         <span class="tag">Contacto</span>
         <h2>¿Necesitás asesoramiento o una cotización?</h2>
         <p>Escribinos por WhatsApp: nuestro equipo te asesora sobre productos, medidas, aplicaciones y desarrollos especiales.</p>
-        <a class="btn btn-primary mt-lg" href="https://wa.me/5491140282252" target="_blank" rel="noopener">Hablar por WhatsApp</a>
       </div>
-      <div class="contact-grid mt-lg">
-        <div class="contact-item">
-          <h3>WhatsApp</h3>
-          <a href="https://wa.me/5491140282252" target="_blank" rel="noopener">11 4028-2252</a>
+
+      <div class="contact-layout mt-lg">
+        <div>
+          <div class="contact-grid" style="grid-template-columns:1fr 1fr;">
+            <div class="contact-item">
+              <h3>WhatsApp</h3>
+              <a href="https://wa.me/5491140282252" target="_blank" rel="noopener">11 4028-2252</a>
+            </div>
+            <div class="contact-item">
+              <h3>E-mail</h3>
+              <p><a href="mailto:sfgomas@gmail.com">sfgomas@gmail.com</a><br>
+              <a href="mailto:sfg.industrias@gmail.com">sfg.industrias@gmail.com</a></p>
+            </div>
+            <div class="contact-item">
+              <h3>Fábrica</h3>
+              <p>Provincia del Neuquén, Argentina</p>
+            </div>
+            <div class="contact-item">
+              <h3>Envíos</h3>
+              <p>A todo el país, tres veces por semana, con distintas empresas de transporte.</p>
+            </div>
+          </div>
         </div>
-        <div class="contact-item">
-          <h3>E-mail</h3>
-          <p><a href="mailto:sfgomas@gmail.com">sfgomas@gmail.com</a><br>
-          <a href="mailto:sfg.industrias@gmail.com">sfg.industrias@gmail.com</a></p>
-        </div>
-        <div class="contact-item">
-          <h3>Fábrica</h3>
-          <p>Provincia del Neuquén, Argentina</p>
-        </div>
-        <div class="contact-item">
-          <h3>Envíos</h3>
-          <p>A todo el país, tres veces por semana, con distintas empresas de transporte.</p>
-        </div>
+
+        <form class="contact-form" id="whatsapp-form" novalidate>
+          <h3>Dejanos tu consulta</h3>
+          <p>Completá el formulario y te contactamos por WhatsApp a la brevedad.</p>
+
+          <div class="form-row">
+            <label for="cf-nombre">Nombre</label>
+            <input type="text" id="cf-nombre" name="nombre" required autocomplete="name" placeholder="Tu nombre y apellido">
+          </div>
+          <div class="form-row">
+            <label for="cf-telefono">Teléfono</label>
+            <input type="tel" id="cf-telefono" name="telefono" required autocomplete="tel" placeholder="Ej: 11 1234-5678">
+          </div>
+          <div class="form-row">
+            <label for="cf-email">E-mail</label>
+            <input type="email" id="cf-email" name="email" required autocomplete="email" placeholder="tu@email.com">
+          </div>
+          <div class="form-row">
+            <label for="cf-consulta">Tu consulta</label>
+            <textarea id="cf-consulta" name="consulta" rows="4" required placeholder="Contanos qué producto o solución necesitás..."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm0 18.1a8.1 8.1 0 0 1-4.1-1.1l-.3-.2-3.1.8.8-3-.2-.3A8.1 8.1 0 1 1 12 20.1Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1s-.7.8-.9 1-.3.2-.6.1a6.6 6.6 0 0 1-3.3-2.9c-.2-.4.2-.4.6-1.3.1-.2 0-.3 0-.5L8.9 8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3.9 2.6 1.1 2.8s1.7 2.7 4.3 3.7a5 5 0 0 0 2.9.6 2.5 2.5 0 0 0 1.6-1.1 2 2 0 0 0 .1-1.1c-.1-.1-.2-.2-.5-.3Z"/></svg>
+            Enviar por WhatsApp
+          </button>
+          <p class="form-status" id="whatsapp-form-status">¡Listo! Se abrió WhatsApp con tu consulta.</p>
+        </form>
       </div>
     </div>
   </section>
