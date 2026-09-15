@@ -113,7 +113,7 @@ p { margin: 0 0 1em; max-width: 62ch; color: var(--ink-soft); }
   text-decoration: none;
   color: var(--ink);
   display: flex;
-  align-items: baseline;
+  align-items: center;
   gap: 0.4rem;
 }
 .brand span {
@@ -471,3 +471,87 @@ a:focus-visible, button:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 2px;
 }
+
+/* ---------- Logo ---------- */
+.brand img { width: 40px; height: 40px; margin-right: 0.2rem; }
+.footer-logo { width: 56px; height: 56px; margin-bottom: 0.9rem; }
+.about-logo { width: 100%; max-width: 260px; height: auto; margin-top: 1.5rem; }
+
+/* ---------- Fotos ---------- */
+.photo {
+  margin: 0;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: #fff;
+}
+.photo img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; }
+.photo--tall img { aspect-ratio: 3 / 4; }
+.photo--fit img { object-fit: contain; }
+.photo--natural img { aspect-ratio: auto; }
+.photo figcaption {
+  font-family: var(--f-head);
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+  padding: 0.65rem 0.9rem;
+  border-top: 1px solid var(--line);
+  background: var(--paper);
+}
+a.photo { display: block; transition: border-color 0.15s ease; }
+a.photo:hover { border-color: var(--accent); }
+
+.gallery { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+.gallery--3 { grid-template-columns: repeat(3, 1fr); }
+.gallery .photo img { aspect-ratio: 1 / 1; }
+@media (max-width: 860px) {
+  .gallery, .gallery--3 { grid-template-columns: repeat(2, 1fr); }
+}
+
+.hero-media { margin: 0; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+.hero-media img { width: 100%; height: auto; }
+@media (max-width: 860px) {
+  .hero-media { order: -1; }
+}
+
+.card:has(> .card-media) { overflow: hidden; }
+.card-media {
+  display: block;
+  width: calc(100% + 3.6rem);
+  max-width: none;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  margin: -1.8rem -1.8rem 1.4rem;
+  border-bottom: 1px solid var(--line);
+}
+.mb-gap { margin-bottom: var(--gap); }
+
+/* ---------- Fichas técnicas y manuales ---------- */
+.docs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+@media (max-width: 860px) {
+  .docs { grid-template-columns: 1fr; }
+}
+.doc-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.9rem;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius);
+  text-decoration: none;
+}
+.doc-card:hover { border-color: var(--accent); }
+.doc-card img {
+  width: 72px;
+  height: 96px;
+  flex-shrink: 0;
+  object-fit: cover;
+  object-position: top;
+  background: #fff;
+  border: 1px solid var(--line);
+}
+.doc-card strong { display: block; font-family: var(--f-head); font-size: 1.15rem; color: var(--ink); }
+.doc-card span { font-size: 0.9rem; font-weight: 600; color: var(--accent); }
