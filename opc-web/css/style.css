@@ -14,7 +14,6 @@
   --panel: #eef0ee;
   --line: #d7dad6;
   --accent: #d3560f;      /* naranja de faena */
-  --accent-ink: #ffffff;
   --blue: #1c4258;        /* azul plano/plano técnico */
 
   /* Type */
@@ -154,9 +153,6 @@ p { margin: 0 0 1em; max-width: 62ch; color: var(--ink-soft); }
   color: var(--ink);
   border-color: var(--accent);
 }
-.nav-cta {
-  display: none;
-}
 .nav-toggle {
   display: none;
   background: none;
@@ -175,23 +171,6 @@ p { margin: 0 0 1em; max-width: 62ch; color: var(--ink-soft); }
   height: 2px;
   background: var(--ink);
   display: block;
-}
-
-@media (min-width: 861px) {
-  .nav-cta {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5em;
-    background: var(--accent);
-    color: var(--accent-ink);
-    text-decoration: none;
-    font-family: var(--f-head);
-    font-weight: 600;
-    font-size: 0.95rem;
-    padding: 0.55rem 1.1rem;
-    border-radius: var(--radius);
-    letter-spacing: 0.02em;
-  }
 }
 
 @media (max-width: 860px) {
