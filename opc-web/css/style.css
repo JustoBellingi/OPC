@@ -353,6 +353,37 @@ section { padding: clamp(3rem, 7vw, 5rem) 0; }
   border-bottom: 2px solid var(--ink);
 }
 .spec-table tbody tr:hover { background: var(--panel); }
+.spec-table td, .spec-table th { white-space: nowrap; }
+
+.table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.table-scroll .spec-table { min-width: 720px; }
+
+/* ---------- Lista de pasos numerados ---------- */
+.steps-list { list-style: none; margin: 0; padding: 0; counter-reset: step; display: grid; gap: 1.1rem; }
+.steps-list li {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  padding-bottom: 1.1rem;
+  border-bottom: 1px solid var(--line);
+}
+.steps-list li::before {
+  counter-increment: step;
+  content: counter(step);
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--blue);
+  color: #fff;
+  font-family: var(--f-head);
+  font-weight: 700;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.steps-list p { margin: 0; font-size: 0.98rem; }
 
 /* ---------- Sub-nav interna (obturadores mecánicos) ---------- */
 .subnav {
