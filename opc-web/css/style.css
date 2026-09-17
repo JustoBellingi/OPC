@@ -607,6 +607,7 @@ a:focus-visible, button:focus-visible {
 .photo--tall img { aspect-ratio: 3 / 4; }
 .photo--fit img { object-fit: contain; }
 .photo--natural img { aspect-ratio: auto; }
+.photo video { display: block; width: 100%; height: auto; }
 .photo figcaption {
   font-family: var(--f-head);
   font-weight: 600;
