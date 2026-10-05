@@ -1,0 +1,126 @@
+### Variables
+@baseUrl = http://localhost:8000
+
+############################################
+#              CATEGORÍAS                  #
+############################################
+
+### Listar categorías
+GET {{baseUrl}}/categorias
+
+### Crear categoría
+POST {{baseUrl}}/categorias
+Content-Type: application/json
+
+{
+  "nombre": "Bebidas",
+  "descripcion": "Gaseosas, jugos y aguas"
+}
+
+### Crear otra categoría
+POST {{baseUrl}}/categorias
+Content-Type: application/json
+
+{
+  "nombre": "Snacks",
+  "descripcion": "Papas fritas, maníes y galletitas"
+}
+
+### Obtener categoría por id
+GET {{baseUrl}}/categorias/1
+
+### Editar categoría
+PUT {{baseUrl}}/categorias/1
+Content-Type: application/json
+
+{
+  "nombre": "Bebidas frías",
+  "descripcion": "Gaseosas, jugos y aguas bien frías"
+}
+
+############################################
+#               PRODUCTOS                  #
+############################################
+
+### Listar productos
+GET {{baseUrl}}/productos
+
+### Crear producto
+POST {{baseUrl}}/productos
+Content-Type: application/json
+
+{
+  "nombre": "Coca-Cola 500ml",
+  "descripcion": "Gaseosa sabor cola",
+  "precio_base": 1500.50,
+  "imagen_url": ["https://ejemplo.com/coca1.jpg", "https://ejemplo.com/coca2.jpg"],
+  "disponible": true
+}
+
+### Crear otro producto
+POST {{baseUrl}}/productos
+Content-Type: application/json
+
+{
+  "nombre": "Papas Lays 150g",
+  "descripcion": "Papas fritas clásicas",
+  "precio_base": 2300,
+  "imagen_url": [],
+  "disponible": true
+}
+
+### Obtener producto por id
+GET {{baseUrl}}/productos/1
+
+### Editar producto
+PUT {{baseUrl}}/productos/1
+Content-Type: application/json
+
+{
+  "nombre": "Coca-Cola 500ml",
+  "descripcion": "Gaseosa sabor cola original",
+  "precio_base": 1700,
+  "imagen_url": ["https://ejemplo.com/coca1.jpg"],
+  "disponible": false
+}
+
+### Producto inexistente (debe devolver 404)
+GET {{baseUrl}}/productos/999
+
+### Validación: precio negativo (debe devolver 422)
+POST {{baseUrl}}/productos
+Content-Type: application/json
+
+{
+  "nombre": "Producto inválido",
+  "precio_base": -10
+}
+
+############################################
+#          PRODUCTO - CATEGORÍA            #
+############################################
+
+### Asignar categoría 1 al producto 1
+POST {{baseUrl}}/productos/1/categorias/1
+
+### Asignar categoría 2 al producto 2
+POST {{baseUrl}}/productos/2/categorias/2
+
+### Asignar de nuevo la misma (debe devolver 409)
+POST {{baseUrl}}/productos/1/categorias/1
+
+### Listar categorías del producto 1
+GET {{baseUrl}}/productos/1/categorias
+
+### Quitar categoría 1 del producto 1
+DELETE {{baseUrl}}/productos/1/categorias/1
+
+############################################
+#               ELIMINAR                   #
+############################################
+
+### Eliminar producto
+DELETE {{baseUrl}}/productos/2
+
+### Eliminar categoría
+DELETE {{baseUrl}}/categorias/2
