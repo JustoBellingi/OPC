@@ -1,5 +1,5 @@
 {
-  "name": "api-productos",
+  "name": "trabajo-final",
   "version": "1.0.0",
   "description": "API REST de productos con Express, Firebase Firestore y JWT",
   "main": "index.js",

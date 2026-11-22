@@ -5,7 +5,7 @@ API REST para administrar el catálogo de productos de la tienda (CRUD), con aut
 ## Estructura (arquitectura en capas)
 
 ```
-api-productos/
+trabajo-final/
 ├── index.js                  # Punto de entrada: configura Express, CORS, body-parser, rutas, 404 y errores
 ├── .env / .env.example       # Variables de entorno
 ├── requests.http             # Peticiones de prueba
