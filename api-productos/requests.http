@@ -1,0 +1,38 @@
+### Peticiones de prueba (extensión "REST Client" de VS Code, o copialas a Postman/Thunder Client)
+@base = http://localhost:3000
+
+### 1) Login -> copiá el token de la respuesta
+POST {{base}}/auth/login
+Content-Type: application/json
+
+{ "email": "admin@techlab.com", "password": "admin123" }
+
+### Pegá acá el token que te devolvió el login
+@token = PEGAR_TOKEN_ACA
+
+### 2) Listar productos (público)
+GET {{base}}/api/products
+
+### 3) Obtener un producto por id (público)
+GET {{base}}/api/products/ID_DEL_PRODUCTO
+
+### 4) Crear producto (protegido)
+POST {{base}}/api/products/create
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{ "name": "Teclado mecánico", "price": 45000, "stock": 10, "category": "Periféricos", "description": "Switches red" }
+
+### 5) Actualizar producto (protegido, extra)
+PUT {{base}}/api/products/ID_DEL_PRODUCTO
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{ "price": 39999 }
+
+### 6) Eliminar producto (protegido)
+DELETE {{base}}/api/products/ID_DEL_PRODUCTO
+Authorization: Bearer {{token}}
+
+### 7) Ruta inexistente -> 404
+GET {{base}}/cualquier-cosa
